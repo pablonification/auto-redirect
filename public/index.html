@@ -66,13 +66,24 @@
       <p>You will be automatically redirected to my notes site.</p>
       <p>
         If you are not redirected automatically,
-        <a href="/" class="redirect-link">click here</a>.
+        <a
+          href="https://arqilanotes.notion.site/Catatan-Kuliah-Sistem-dan-Teknologi-Informasi-ITB-Arqila-24135539e3b5801fb2cbcb88bc28f066?source=copy_link"
+          class="redirect-link"
+          >click here</a
+        >.
       </p>
     </div>
 
     <script>
-      // This page should not be reached if server redirect is working properly
-      console.log("Static page loaded - server redirect may not be working");
+      // Client-side redirect as fallback
+      const destinationUrl =
+        "https://arqilanotes.notion.site/Catatan-Kuliah-Sistem-dan-Teknologi-Informasi-ITB-Arqila-24135539e3b5801fb2cbcb88bc28f066?source=copy_link";
+
+      // Try server-side redirect first, then fallback to client-side
+      setTimeout(() => {
+        console.log("Client-side redirect fallback triggered");
+        window.location.href = destinationUrl;
+      }, 1000);
     </script>
   </body>
 </html>
